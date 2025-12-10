@@ -1,0 +1,7 @@
+PORT = your port number
+DBURL = database url
+EMAIL= email id
+PASSWORD= email id app password
+SECRET_KEY= password to generate json web token
+adminusername= ________________
+adminpassword= ________________

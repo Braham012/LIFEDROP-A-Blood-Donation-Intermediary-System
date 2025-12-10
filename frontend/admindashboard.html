@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="CSS/admindashboard.css" />
+  </head>
+
+  <body>
+    <div id="notification"></div>
+
+    <!-- ---------------------- SIDEBAR ---------------------- -->
+    <div class="sidebar">
+      <div class="logo">
+        <h2><i class="fas fa-heart"></i> <span>LifeDrop</span></h2>
+      </div>
+      <nav class="nav-menu">
+        <button
+          class="nav-btn active"
+          onclick="showSection('dashboard', event)"
+        >
+          📊 Dashboard
+        </button>
+        <button class="nav-btn" onclick="showSection('all-donors', event)">
+          🧍‍♂️ All Donors
+        </button>
+        <button
+          class="nav-btn"
+          onclick="showSection('emergency-requests', event)"
+        >
+          🚨 Emergency Requests
+        </button>
+        <button class="nav-btn" onclick="showSection('all-bloodbank', event)">
+          🏥 All Bloodbanks
+        </button>
+
+        <button
+          class="nav-btn"
+          onclick="showSection('pending-approval', event)"
+        >
+          ⏳ Pending Approval
+        </button>
+        <button class="nav-btn" onclick="showSection('feedback-forms', event)">
+          📝 Feedback Forms
+        </button>
+
+        <button class="nav-btn logout-btn" onclick="logout()">🚪 Logout</button>
+      </nav>
+    </div>
+
+    <!-- ---------------------- MAIN CONTENT ---------------------- -->
+    <div class="main-content">
+      <div class="header">
+        <h1>Admin Dashboard</h1>
+      </div>
+
+      <div class="container">
+        <!-- ---------- DASHBOARD ---------- -->
+        <section id="dashboard" class="section active">
+          <h2>Dashboard Overview</h2>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <h3>Total Bloodbanks</h3>
+              <p class="stat-number" id="bloodbankCount">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Pending Approvals</h3>
+              <p class="stat-number" id="pendingCount">0</p>
+            </div>
+            <div class="stat-card">
+              <h3>Emergency Requests</h3>
+              <p class="stat-number" id="emergencyCount">0</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ---------- ALL DONORS ---------- -->
+        <section id="all-donors" class="section">
+          <h2>All Donors</h2>
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchDonors"
+              placeholder="Search Donor..."
+              onkeyup="searchDonors()"
+            />
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Blood Group</th>
+              </tr>
+            </thead>
+            <tbody id="donorTable">
+              <tr>
+                <td colspan="6">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ---------- ALL BLOODBANKS ---------- -->
+        <section id="all-bloodbank" class="section">
+          <h2>All Bloodbanks</h2>
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchAll"
+              placeholder="Search Bloodbank..."
+              onkeyup="searchBloodbanks()"
+            />
+          </div>
+
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Registration ID</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody id="allBloodTable">
+              <tr>
+                <td colspan="6">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ---------- PENDING APPROVALS ---------- -->
+        <section id="pending-approval" class="section">
+          <h2>Pending Approvals</h2>
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Registration ID</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Take Action</th>
+              </tr>
+            </thead>
+            <tbody id="pendingTable">
+              <tr>
+                <td colspan="6">Loading...</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </div>
+      <!-- ---------- EMERGENCY REQUESTS ---------- -->
+      <section id="emergency-requests" class="section">
+        <h2>Emergency Requests</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Patient Name</th>
+              <th>Blood Group</th>
+              <th>Need Within</th>
+              <th>Location</th>
+              <th>Contact</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="emergencyTable">
+            <tr>
+              <td colspan="7">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+      <!-- ---------- FEEDBACK FORMS ---------- -->
+      <section id="feedback-forms" class="section">
+        <h2>Feedback Forms</h2>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Subject</th>
+              <th>Message</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="feedbackTable">
+            <tr>
+              <td colspan="6">Loading...</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+    <!-- ---------- ACTION POPUP MODAL ---------- -->
+    <div id="actionModal">
+      <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h3>Bloodbank Request Details</h3>
+        <div id="modalContent">
+          <!-- Dynamic request details will appear here -->
+        </div>
+        <input type="text" id="remarkInput" placeholder="Enter remark..." />
+        <div class="modal-buttons">
+          <button id="acceptBtn">Accept</button>
+          <button id="rejectBtn">Reject</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="Script/admindashboard.js"></script>
+  </body>
+</html>

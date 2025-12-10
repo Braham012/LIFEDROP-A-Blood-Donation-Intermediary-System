@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donor Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="CSS/donordashboard.css" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="welcome">
+        <h2>Welcome back, <span id="userName"></span>!</h2>
+      </div>
+
+      <ul>
+        <li>
+          <a href="#donationRecords" id="donationRecordsLink" class="active">
+            <i class="fas fa-history"></i> Donation Records
+          </a>
+        </li>
+        <li>
+          <a href="#book-appointment" id="bookAppointmentLink">
+            <i class="fas fa-calendar-check"></i> Book an Appointment
+          </a>
+        </li>
+        <li>
+          <a href="#bloodbank" id="bloodBankLink">
+            <i class="fas fa-hospital"></i> Bloodbanks
+          </a>
+        </li>
+        <li>
+          <a href="emergency.html" id="emergencyLink">
+            <i class="fas fa-exclamation-triangle"></i> Emergency
+          </a>
+        </li>
+        <li>
+          <a href="#logout" id="logoutLink">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div id="notificationBar" class="notification-bar"></div>
+
+    <div class="main-content">
+      <!-- Donation Records Section -->
+      <div id="donationRecordsSection" class="section active">
+        <div class="section-header">
+          <h2 class="section-title">Donation Records</h2>
+          <p class="section-subtitle">View your donation history</p>
+        </div>
+        <table class="records-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Location</th>
+              <th>Blood Type</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="donationRecordsTableBody">
+            <tr>
+              <td colspan="4" style="text-align: center">
+                Loading donation records...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Book Appointment Section -->
+      <section id="book-appointmentSection" class="section">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Schedule Your Donation</h2>
+            <p class="section-subtitle">
+              Book an appointment at your nearest donation center
+            </p>
+          </div>
+          <form class="donation-form" id="donationForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="firstName">First Name *</label>
+                <input type="text" id="firstName" name="firstName" required />
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name *</label>
+                <input type="text" id="lastName" name="lastName" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone *</label>
+                <input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-group">
+                <label for="bloodType">Blood Type</label>
+                <select id="bloodType" name="bloodType">
+                  <option value="">Select if known</option>
+                  <option value="O-">O-</option>
+                  <option value="O+">O+</option>
+                  <option value="A-">A-</option>
+                  <option value="A+">A+</option>
+                  <option value="B-">B-</option>
+                  <option value="B+">B+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="AB+">AB+</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="preferredDate">Preferred Date *</label>
+                <input
+                  type="date"
+                  id="preferredDate"
+                  name="preferredDate"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="preferredTime">Preferred Time *</label>
+                <select id="preferredTime" name="preferredTime" required>
+                  <option value="">Select time</option>
+                  <option value="09:00">9:00 AM</option>
+                  <option value="10:00">10:00 AM</option>
+                  <option value="11:00">11:00 AM</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="14:00">2:00 PM</option>
+                  <option value="15:00">3:00 PM</option>
+                  <option value="16:00">4:00 PM</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="location">Preferred Location *</label>
+                <select id="location" name="location" required>
+                  <option value="">Select location</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group full-width">
+              <label for="message">Additional Notes</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                placeholder="Any special requirements or questions..."
+              ></textarea>
+            </div>
+            <div class="form-group full-width">
+              <label class="checkbox-label">
+                <input type="checkbox" id="firstTime" name="firstTime" />
+                This is my first time donating blood
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large">
+              <i class="fas fa-calendar-check"></i> Schedule Appointment
+            </button>
+          </form>
+        </div>
+      </section>
+      <!-- Bloodbank Section -->
+      <div id="bloodbankSection" class="section">
+        <div class="section-header">
+          <h2 class="section-title">Bloodbank Information</h2>
+          <p class="section-subtitle">
+            View details of your selected blood bank
+          </p>
+        </div>
+        <table class="records-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Address</th>
+              <th>Phone</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody id="bloodbankTableBody">
+            <tr>
+              <td colspan="4" style="text-align: center">
+                Loading blood bank data...
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="Script/donordashboard.js"></script>
+  </body>
+</html>

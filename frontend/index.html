@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifeDrop - Save Lives Through Blood Donation</title>
+    <link rel="stylesheet" href="CSS/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <nav class="nav">
+        <div class="nav-container">
+          <div class="nav-brand">
+            <i class="fas fa-heart"></i>
+            <span>LifeDrop</span>
+          </div>
+          <div class="nav-menu" id="navMenu">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#blood-types" class="nav-link">Blood Types</a>
+            <a href="#donation-section" class="nav-link">Donation Process</a>
+            <a href="#centers" class="nav-link">Centers</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="auth.html" class="nav-link">Signup/Login</a>
+          </div>
+          <div class="nav-toggle" id="navToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">Be Someone's Hero Today</h1>
+          <p class="hero-subtitle">
+            Every drop counts. Your blood donation can save up to 3 lives and
+            make a real difference in your community.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" onclick="gotoauth()">
+              <i class="fas fa-heart"></i>
+              Donate Now
+            </button>
+            <button class="btn btn-outline" onclick="goToEmergency()">
+              Emergency
+            </button>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <div class="hero-graphic">
+            <div class="blood-drop">
+              <i class="fas fa-tint"></i>
+            </div>
+            <div class="pulse-ring"></div>
+            <div class="pulse-ring delay-1"></div>
+            <div class="pulse-ring delay-2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Emergency Request Section -->
+    <section class="emergency-section">
+      <div class="container">
+        <div class="emergency-content">
+          <div class="emergency-icon">
+            <i class="fas fa-exclamation-triangle"></i>
+          </div>
+          <div class="emergency-text">
+            <h2>Emergency Blood Request</h2>
+            <p>
+              Urgent need for all bloodtype at Your Nearest Hospital. Your
+              immediate donation can save lives.
+            </p>
+          </div>
+          <button class="btn btn-emergency" onclick="handleEmergencyRequest()">
+            <i class="fas fa-ambulance"></i>
+            Respond to Emergency
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Why Donate Blood?</h2>
+          <p class="section-subtitle">
+            Every second someone in India needs blood. Here's how your donation
+            makes a difference.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-heartbeat"></i>
+            </div>
+            <h3>Save Lives</h3>
+            <p>
+              One donation can save up to 3 lives. Your blood helps accident
+              victims, cancer patients, and those undergoing surgery.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <h3>Help Your Community</h3>
+            <p>
+              Local hospitals rely on volunteer donors like you to maintain
+              adequate blood supplies for emergency situations.
+            </p>
+          </div>
+          <div class="about-card">
+            <div class="card-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3>It's Safe</h3>
+            <p>
+              All equipment is sterile and used only once. The donation process
+              is supervised by trained medical professionals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blood Types Section -->
+    <section id="blood-types" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Blood Type Compatibility</h2>
+          <p class="section-subtitle">
+            Understanding blood types and who can donate to whom
+          </p>
+        </div>
+        <div class="blood-types-container">
+          <div class="blood-type-card universal-donor">
+            <h3>O-</h3>
+            <p class="type-label">Universal Donor</p>
+            <p>Can donate to all blood types</p>
+            <div class="compatibility-info">
+              <span class="can-donate">Can donate to:</span>
+              <div class="blood-types">All Types</div>
+            </div>
+          </div>
+          <div class="blood-type-card universal-recipient">
+            <h3>AB+</h3>
+            <p class="type-label">Universal Recipient</p>
+            <p>Can receive from all blood types</p>
+            <div class="compatibility-info">
+              <span class="can-receive">Can receive from:</span>
+              <div class="blood-types">All Types</div>
+            </div>
+          </div>
+          <div class="blood-type-card">
+            <h3>A+</h3>
+            <p class="type-label">Common Type</p>
+            <p>34% of population</p>
+            <div class="compatibility-info">
+              <span class="can-donate">Can donate to:</span>
+              <div class="blood-types">A+, AB+</div>
+            </div>
+          </div>
+          <div class="blood-type-card">
+            <h3>B+</h3>
+            <p class="type-label">Common Type</p>
+            <p>9% of population</p>
+            <div class="compatibility-info">
+              <span class="can-donate">Can donate to:</span>
+              <div class="blood-types">B+, AB+</div>
+            </div>
+          </div>
+          <div class="blood-type-card">
+            <h3>A-</h3>
+            <p class="type-label">Common Type</p>
+            <p>6% of population</p>
+            <div class="compatibility-info">
+              <span class="can-donate">Can donate to:</span>
+              <div class="blood-types">A+, A-, AB+, AB-</div>
+            </div>
+          </div>
+          <div class="blood-type-card">
+            <h3>B-</h3>
+            <p class="type-label">Rare Type</p>
+            <p>2% of population</p>
+            <div class="compatibility-info">
+              <span class="can-donate">Can donate to:</span>
+              <div class="blood-types">B+, B-, AB+, AB-</div>
+            </div>
+          </div>
+        </div>
+        <div class="blood-checker">
+          <h3>Check Your Compatibility</h3>
+          <div class="blood-selector">
+            <select id="donorBloodType">
+              <option value="">Select your blood type</option>
+              <option value="O-">O-</option>
+              <option value="O+">O+</option>
+              <option value="A-">A-</option>
+              <option value="A+">A+</option>
+              <option value="B-">B-</option>
+              <option value="B+">B+</option>
+              <option value="AB-">AB-</option>
+              <option value="AB+">AB+</option>
+            </select>
+            <button class="btn btn-primary" onclick="checkCompatibility()">
+              Check Compatibility
+            </button>
+          </div>
+          <div id="compatibilityResult" class="compatibility-result"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Donation Process Section -->
+    <section id="donation-section" class="donation-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">The Donation Process</h2>
+          <p class="section-subtitle">
+            What to expect during your blood donation
+          </p>
+        </div>
+        <div class="process-timeline">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Registration</h3>
+              <p>Complete a brief health questionnaire and show ID</p>
+              <span class="step-time">5 minutes</span>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Health Screening</h3>
+              <p>
+                Quick check of vitals, hemoglobin levels, and medical history
+              </p>
+              <span class="step-time">10 minutes</span>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Donation</h3>
+              <p>The actual blood collection process</p>
+              <span class="step-time">8-10 minutes</span>
+            </div>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Recovery</h3>
+              <p>Rest and enjoy refreshments before leaving</p>
+              <span class="step-time">10-15 minutes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Centers Section -->
+    <section id="centers" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Find Donation Centers</h2>
+          <p class="section-subtitle">
+            Locate the nearest blood donation center in your area
+          </p>
+        </div>
+        <div class="centers-container">
+          <div class="centers-list">
+            <div class="center-card">
+              <div class="center-info">
+                <h3>Blood Bank, Gurdaspur</h3>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Babbar Heart Centre,
+                  Gurdaspur, Punjab 143521
+                </p>
+                <p><i class="fas fa-clock"></i> Daily: Open 24 Hours</p>
+                <p><i class="fas fa-phone"></i> 0187 4240009</p>
+              </div>
+              <button
+                class="btn btn-outline btn-small"
+                onclick="window.open('https://maps.google.com/maps?hl=en&gl=it&um=1&ie=UTF-8&fb=1&sa=X&ftid=0x391b93662bfe08f9:0x4654ce8012ca5dd','blank')"
+              >
+                Get Directions
+              </button>
+            </div>
+            <div class="center-card">
+              <div class="center-info">
+                <h3>Guru Nanak Dev Hospital Blood Bank</h3>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Majitha Road, Amritsar,
+                  Punjab 143001
+                </p>
+                <p><i class="fas fa-clock"></i> Daily: Open 24 Hours</p>
+                <p><i class="fas fa-phone"></i> 0183 2426918</p>
+              </div>
+              <button
+                class="btn btn-outline btn-small"
+                onclick="window.open('https://www.google.com/maps/place//data=!4m2!3m1!1s0x391963687787d61f:0xc94b50c635d79d13?sa=X&ved=1t:8290&ictx=111','blank')"
+              >
+                Get Directions
+              </button>
+            </div>
+            <div class="center-card">
+              <div class="center-info">
+                <h3>Blood Bank, Pathankot</h3>
+                <p>
+                  <i class="fas fa-map-marker-alt"></i> Shahpur Road, Pathankot
+                  , Punjab 145001
+                </p>
+                <p><i class="fas fa-clock"></i> Daily: Open 24 Hours</p>
+                <p><i class="fas fa-phone"></i> 0186 2250160</p>
+              </div>
+              <button
+                class="btn btn-outline btn-small"
+                onclick="window.open('https://www.google.com/maps/dir//Blood+Bank/data=!4m6!4m5!1m1!4e2!1m2!1m1!1s0x391c7f1182dd26b9:0xd6ecd72d2ac3ef12?sa=X&ved=1t:57443&ictx=111&cshid=1760961997476752','blank')"
+              >
+                Get Directions
+              </button>
+            </div>
+          </div>
+          <div class="map-container">
+            <div class="map-placeholder">
+              <i class="fas fa-map"></i>
+              <p>Interactive Map</p>
+
+              <div id="map"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section bg-light">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-subtitle">
+            Have questions? We're here to help you start your donation journey
+          </p>
+        </div>
+        <div class="contact-container">
+          <div class="contact-info">
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Call Us</h3>
+                <p>+91 9056160640</p>
+                <small>Available 24/7</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Email Us</h3>
+                <p>brahamdeep31@gmail.com</p>
+                <small>Response within 24 hours</small>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div class="contact-details">
+                <h3>Visit Us</h3>
+                <p>Gurdaspur<br />Punjab, IN 143521</p>
+                <small>Mon-Fri: 9:00 AM - 5:00 PM</small>
+              </div>
+            </div>
+          </div>
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <label for="contactName">Name *</label>
+              <input type="text" id="contactName" name="contactName" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email *</label>
+              <input
+                type="email"
+                id="contactEmail"
+                name="contactEmail"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Subject *</label>
+              <input
+                type="text"
+                id="contactSubject"
+                name="contactSubject"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message *</label>
+              <textarea
+                id="contactMessage"
+                name="contactMessage"
+                rows="6"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Send Message
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <div class="footer-brand">
+              <i class="fas fa-heart"></i>
+              <span>LifeDrop</span>
+            </div>
+            <p>
+              Saving lives one donation at a time. Join thousands of heroes
+              making a difference in their community.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="footer-section">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="#home">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#blood-types">Blood Types</a></li>
+              <li><a href="#donate">Donate</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Resources</h3>
+            <ul>
+              <li><a href="#">Eligibility Requirements</a></li>
+              <li><a href="#">Donation Guidelines</a></li>
+              <li><a href="#">Health & Safety</a></li>
+              <li><a href="#">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-section">
+            <h3>Emergency</h3>
+            <ul>
+              <li><a href="#">Emergency Hotline</a></li>
+              <li><a href="#">Urgent Requests</a></li>
+              <li><a href="#">Hospital Partners</a></li>
+              <li><a href="#">Crisis Response</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 LifeDrop. All rights reserved. |
+            <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="Script/index.js"></script>
+  </body>
+</html>

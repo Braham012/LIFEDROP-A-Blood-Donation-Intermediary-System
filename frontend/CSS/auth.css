@@ -1,0 +1,354 @@
+:root {
+  --primary: #e02424;
+  --primary-dark: #b91c1c;
+  --background: #f9fafb;
+  --text-dark: #1e293b;
+  --text-light: #6b7280;
+  --border: #999;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--background);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.auth-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 440px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+  position: relative;
+}
+.auth-logo {
+  color: var(--primary);
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+.auth-title {
+  font-weight: 700;
+  color: var(--text-dark);
+  font-size: 1.8rem;
+  margin: 0;
+}
+.auth-subtitle {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+.role-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+.input-group {
+  position: relative;
+}
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.3s;
+}
+.input-group input:focus,
+.input-group select:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(224, 36, 36, 0.15);
+}
+.toggle-password {
+  position: absolute;
+  right: 0.9rem;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+.btn {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background 0.3s;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+.btn:hover {
+  background: var(--primary-dark);
+}
+.back-home {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: var(--text-light);
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+.back-home i {
+  margin-right: 6px;
+}
+.hidden {
+  display: none;
+}
+.toggle-link {
+  margin-top: 0.5rem;
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 500;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.toggle-link:hover {
+  color: var(--primary-dark);
+}
+.login-methods {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.login-tab {
+  cursor: pointer;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--border);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: #fff;
+  transition: all 0.3s;
+}
+.login-tab.active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.resend-otp {
+  color: var(--primary);
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: none;
+  user-select: none;
+}
+.resend-otp.disabled {
+  color: var(--text-light);
+  pointer-events: none;
+}
+.gender-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+}
+.gender-group label {
+  flex: 1;
+  text-align: center;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 0.6rem 0;
+  cursor: pointer;
+  user-select: none;
+}
+.gender-group input[type="radio"] {
+  display: none;
+}
+.gender-group input[type="radio"]:checked + label {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+.otp-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Leaflet Map Modal */
+#mapModal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+#mapContainer {
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  position: relative;
+  background: #fff;
+}
+#map {
+  width: 100%;
+  height: 100%;
+}
+#confirmAddressBtn {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10001;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+/* Top Notification Bar */
+#topNotification {
+  position: fixed;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--primary);
+  color: #fff;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: top 0.4s ease-in-out;
+}
+/* OTP Modal Styling */
+.otp-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.otp-content {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.otp-content h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.otp-content p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 25px;
+}
+
+.otp-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.otp-inputs input {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.otp-inputs input:focus {
+  border-color: #e63946;
+  box-shadow: 0 0 0 2px rgba(230, 57, 70, 0.15);
+}
+
+.otp-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.verify-btn,
+.resend-btn {
+  padding: 12px 0;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.verify-btn {
+  background: #e63946;
+  color: #fff;
+}
+
+.verify-btn:hover {
+  background: #c5303a;
+}
+
+.resend-btn {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.resend-btn:disabled {
+  background: #ddd;
+  color: #888;
+  cursor: not-allowed;
+}
+
+.resend-btn:not(:disabled):hover {
+  background: #e8e8e8;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

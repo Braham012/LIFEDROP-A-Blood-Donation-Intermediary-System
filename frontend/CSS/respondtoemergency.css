@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+}
+
+.header {
+  background: white;
+  width: 100%;
+  border-bottom: 1px solid #eee;
+}
+
+.nav {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-size: 24px;
+  font-weight: 700;
+  color: #d9534f;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.section {
+  padding: 60px 20px;
+}
+
+.container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.section-subtitle {
+  color: #555;
+  margin-top: 10px;
+}
+
+.requests-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 20px;
+}
+
+.request-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #d9534f;
+  transition: 0.2s;
+}
+
+.request-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.request-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.request-details p {
+  margin: 6px 0;
+  color: #555;
+}
+
+.request-details i {
+  margin-right: 8px;
+  color: #d9534f;
+}
+/* Fixed navbar */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  z-index: 1000; /* keep it above other content */
+}
+
+/* Navbar container */
+.nav-container {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #d9534f;
+}
+
+/* Add top padding to body to avoid content being hidden under navbar */
+body {
+  padding-top: 70px; /* height of navbar */
+}
