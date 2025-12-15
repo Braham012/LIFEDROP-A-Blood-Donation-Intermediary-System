@@ -125,3 +125,43 @@ Visit http://localhost:3000 in your browser.
 
 Below are preview images of the LIFEDROP-A-Blood-Donation-Intermediary-System (A web-based Platform).
 
+### Home Page
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Homepage.png)
+### Emergency Form
+
+<p align="center">
+  <img src="https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Emergency%20form.png" width="500">
+</p>
+
+### Respomd to Emergency
+ ![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Emergency%20Request.png) 
+### Why Donate Blood
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Why%20Donate%20Blood.png)
+### Blood Donate Compatibility
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Blood%20Donate%20Compatibility.png)
+### Donation Process
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Donation%20Process.png)
+### Leaflet Integration
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Leoflet%20Integration.png)
+### Donor Registration
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Donor%20Registration.png)
+### Donor Login
+| ![withpassword](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Donor%20Login%20with%20Password.png) | ![withotp](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Donor%20Login%20with%20OTP.png) |
+|-------------------------|-------------------------|
+### Donor Dashboard
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Donor%20Dashboard%201.png)
+### Donor Appointment Form
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Donor%20Appointment%20Form.png)
+### Bloodbank Registration / Login
+| ![registration](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Bloodbank%20Registration.png) | ![login](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Bloodbank%20Login.png) |
+|-------------------------|-------------------------|
+### Bloodbank Dashboard
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Bloodbank%20Dashboard.png)
+### Bloodbank - Add Donation Record
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Bloodbank%20Add%20Donation%20Record.png)
+### Admin Dashboard
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Admin%20dashboard.png)
+### Admin Dashboard - Bloodbank Pending Approval
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Admin%20Dashboard%20%20-%20Bloodbank%20Pending%20Approval.png)
+### Admin - Emergency Requests
+![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Admin%20Dashboard%20%20-%20All%20Emergency%20Request.png)
