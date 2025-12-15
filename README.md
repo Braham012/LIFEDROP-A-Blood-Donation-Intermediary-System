@@ -1,4 +1,4 @@
-# 🩸 LIFEDROP – Blood Donation Intermediary System
+# ❤️ LIFEDROP – Blood Donation Intermediary System
 
 LifeDrop is a modern web-based platform designed to streamline blood donation by connecting donors, patients, hospitals, and verified blood banks in real time.
 It ensures faster emergency response, geographic donor matching, secure communication, and a smooth, user-friendly interface for all users.
@@ -133,9 +133,9 @@ Below are preview images of the LIFEDROP-A-Blood-Donation-Intermediary-System (A
   <img src="https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Emergency%20form.png" width="500">
 </p>
 
-### Respomd to Emergency
+### Respond to Emergency
  ![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Emergency%20Request.png) 
-### Why Donate Blood
+### Why Donate Blood?
 ![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Why%20Donate%20Blood.png)
 ### Blood Donate Compatibility
 ![](https://github.com/Braham012/LIFEDROP-A-Blood-Donation-Intermediary-System/blob/main/Screenshots/Blood%20Donate%20Compatibility.png)
